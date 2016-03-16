@@ -1,0 +1,6 @@
+.DS_Store
+composer.lock
+/wp
+/vendor
+production-config.php
+local-config.php
