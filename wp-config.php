@@ -1,52 +1,60 @@
 <?php
-ini_set( 'display_errors', 0 );
+error_reporting();
+ini_set('display_errors', 0);
 
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
-if ( file_exists( dirname( __FILE__ ) . '/production-config.php' ) ) {
-    define( 'WP_LOCAL_DEV', false );
-    include( dirname( __FILE__ ) . '/production-config.php' );
+if (file_exists(dirname(__FILE__) . '/production-config.php')) {
+    define('WP_LOCAL_DEV', false);
+    include(dirname(__FILE__) . '/production-config.php');
 } else {
-    define( 'WP_LOCAL_DEV', true );
-    include( dirname( __FILE__ ) . '/local-config.php' );
+    define('WP_LOCAL_DEV', true);
+    include(dirname(__FILE__) . '/local-config.php');
 }
 
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
+define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content');
+
+// =====================
+// Default site settings
+// =====================
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp');
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_DEFAULT_THEME', 'twentyten');
 
 // ================================================
 // You almost certainly do not want to change these
 // ================================================
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
 
 // ================================
 // Language
 // Leave blank for American English
 // ================================
-define( 'WPLANG', '' );
+define('WPLANG', '');
 
 // ======================
 // Hide errors by default
 // ======================
-define( 'WP_DEBUG_DISPLAY', false );
-define( 'WP_DEBUG', false );
+define('WP_DEBUG_DISPLAY', false);
+define('WP_DEBUG', false);
 
 // =========================
 // Disable automatic updates
 // =========================
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+define('AUTOMATIC_UPDATER_DISABLED', true);
 
 // =======================
 // Load WordPress Settings
 // =======================
-$table_prefix  = 'wp_';
+$table_prefix = 'wp_';
 
-if ( ! defined( 'ABSPATH' ) ) {
-    define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
+if (!defined('ABSPATH')) {
+    define('ABSPATH', dirname(__FILE__) . '/wp/');
 }
-require_once( ABSPATH . 'wp-settings.php' );
+require_once(ABSPATH . 'wp-settings.php');
