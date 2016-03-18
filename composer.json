@@ -1,7 +1,17 @@
 {
+    "name": "wordpress-composer",
+    "description": "Composing wordpress",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
     "require": {
         "php": ">=7.0",
-        "johnpbloch/wordpress": "4.4.2"
+        "johnpbloch/wordpress": "4.4.2",
+        "wpackagist-plugin/akismet":"*",
+        "wpackagist-theme/twentyten":"*"
     },
     "extra": {
         "wordpress-install-dir": "wp"
