@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "johnpbloch/wordpress": "4.4.2",
+        "johnpbloch/wordpress": "*",
         "wpackagist-plugin/akismet":"*",
         "wpackagist-theme/twentyten":"*"
     },
